@@ -7,6 +7,16 @@ const { editPassword } = require("./editPassword");
 const { sendNotificationsToUsers } = require("./sendNotificationsToUsers");
 const { switchUserState } = require("./switchUserState");
 const { editAdminPermissions } = require("./editAdminPermissions");
+const { createQuote } = require("./createQuote");
+const { editQuote } = require("./editQuote");
+const { createQuizz } = require("./createQuizz");
+const { editQuizz } = require("./editQuizz");
+const { publishQuizz } = require("./publishQuizz");
+const { switchQuizzState } = require("./switchQuizzState");
+const { deleteQuizz } = require("./deleteQuizz");
+const { createCategory } = require("./createCategory");
+const { editCategory } = require("./editCategory");
+const { deleteCategory } = require("./deleteCategory");
 
 module.exports = {
   createArticle,
@@ -18,4 +28,14 @@ module.exports = {
   sendNotificationsToUsers,
   switchUserState,
   editAdminPermissions,
+  createQuote,
+  editQuote,
+  createQuizz,
+  editQuizz,
+  deleteQuizz,
+  switchQuizzState,
+  createCategory,
+  editCategory,
+  deleteCategory,
+  publishQuizz,
 };

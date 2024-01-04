@@ -9,6 +9,10 @@ const {
   sendNotificationsToUsers,
   switchUserState,
   switchArticleState,
+  createQuizz,
+  editQuizz,
+  deleteQuizz,
+  publishQuizz,
 } = require("./controller");
 
 const router = express.Router();
@@ -19,6 +23,13 @@ router
   .delete(deleteArticle)
   .post(createArticle)
   .patch(publishArticle);
+
+router
+  .route("/quizz")
+  .post(createQuizz)
+  .put(editQuizz)
+  .delete(deleteQuizz)
+  .patch(publishQuizz);
 
 router.put("/password", editPassword);
 router.post("/notifications", sendNotificationsToUsers);
