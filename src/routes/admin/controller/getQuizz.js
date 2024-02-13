@@ -1,6 +1,4 @@
-const Article = require("../../../models/Article");
-
-const deleteArticle = (req, res, next) => {
+const getQuizz = (req, res, next) => {
   try {
     return res.status(200).json({
       success: true,
@@ -11,4 +9,4 @@ const deleteArticle = (req, res, next) => {
   }
 };
 
-module.exports = { deleteArticle };
+module.exports = { getQuizz };

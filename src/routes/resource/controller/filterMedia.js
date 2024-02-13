@@ -1,4 +1,4 @@
-const filterMedia = (req, res, next) => {
+const filterMedia = async (req, res, next) => {
   try {
     return res.status(200).json({
       success: true,

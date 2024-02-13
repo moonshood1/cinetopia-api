@@ -32,6 +32,10 @@ const QuizzSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Status",
     },
+    media: {
+      type: Schema.Types.ObjectId,
+      ref: "Article",
+    },
     questions: [
       {
         questionText: {

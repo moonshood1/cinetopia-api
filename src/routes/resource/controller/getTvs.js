@@ -1,4 +1,4 @@
-const getTvs = (req, res, next) => {
+const getTvs = async (req, res, next) => {
   try {
     return res.status(200).json({
       success: true,

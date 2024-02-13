@@ -1,3 +1,5 @@
+const Article = require("../../../models/Article");
+
 const switchArticleState = (req, res, next) => {
   try {
     return res.status(200).json({

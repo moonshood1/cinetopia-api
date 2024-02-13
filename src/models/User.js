@@ -29,6 +29,16 @@ const UserSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Status",
     },
+    passCode: {
+      expiredAt: {
+        type: Date,
+        default: null,
+      },
+      code: {
+        type: String,
+        default: null,
+      },
+    },
     savedArticles: [
       {
         type: Schema.Types.ObjectId,

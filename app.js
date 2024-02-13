@@ -1,6 +1,8 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 dotenv.config();
 
@@ -16,10 +18,14 @@ const userRouter = require("./src/routes/user");
 const authRouter = require("./src/routes/auth");
 const resourceRouter = require("./src/routes/resource");
 const adminRouter = require("./src/routes/admin");
+const testRouter = require("./src/routes/test");
 
 app.use(express.static("public"));
+app.use(cors({ exposedHeaders: "Authorization" }));
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
@@ -27,6 +33,7 @@ app.use("/users", userRouter);
 app.use("/auth", authRouter);
 app.use("/resources", resourceRouter);
 app.use("/admin", adminRouter);
+app.use("/test", testRouter);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
